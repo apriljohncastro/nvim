@@ -11,19 +11,19 @@ require('mason-lspconfig').setup({
   ensure_installed = {
 	'tsserver',
 	'eslint',
+    'pylsp',
+    'angularls',
+    'tsserver',
+    'cssls',
   },
   handlers = {
     lsp_zero.default_setup,
   },
 })
+require("lspconfig").phpactor.setup {}
 
 lsp_zero.setup_servers({
-	'angularls',
-	'tsserver',
-	'eslint',
-	'pylsp',
-	'phpactor',
-	'cssls',
+    'phpactor',
 })
 
 local cmp = require('cmp')
