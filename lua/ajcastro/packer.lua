@@ -16,10 +16,25 @@ return require('packer').startup(function(use)
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
-	use('theprimeagen/harpoon')
-	use('mbbill/undotree')
+    use('theprimeagen/harpoon')
+    use('mbbill/undotree')
 	use('tpope/vim-fugitive')
---	use('williamboman/mason.nvim')
+    use('m4xshen/autoclose.nvim')
+    use('preservim/nerdcommenter')
+    use('lukas-reineke/indent-blankline.nvim')
+    use('folke/zen-mode.nvim')
+
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    })
+
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
