@@ -34,6 +34,21 @@ local cmp_mappings = lsp_zero.defaults.cmp_mappings({
 	['<C-Space>'] = cmp.mapping.complete(),
 })
 
+require("luasnip.loaders.from_vscode").lazy_load()
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+    }, {
+        { name = 'buffer' },
+    }),
+})
+
 lsp_zero.on_attach(function(client, bufnr)
 
 	local opts = {buffer = bufnr, remap = false}
