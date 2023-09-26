@@ -21,7 +21,6 @@ require('mason-lspconfig').setup({
   },
 })
 require("lspconfig").phpactor.setup {}
-
 lsp_zero.setup_servers({
     'phpactor',
 })

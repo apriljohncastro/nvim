@@ -23,6 +23,10 @@ return require('packer').startup(function(use)
     use('preservim/nerdcommenter')
     use('lukas-reineke/indent-blankline.nvim')
     use('folke/zen-mode.nvim')
+    use('ellisonleao/gruvbox.nvim')
+    use('nvim-tree/nvim-tree.lua')
+    use('nvim-tree/nvim-web-devicons')
+    use('nvim-lualine/lualine.nvim')
 
     use({
         "folke/trouble.nvim",
